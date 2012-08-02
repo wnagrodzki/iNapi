@@ -17,6 +17,9 @@
 		2E4606B015A4B631009C6878 /* DownloadStatusSucceeded.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E4606AD15A4B631009C6878 /* DownloadStatusSucceeded.png */; };
 		2E4606B415A4B6CF009C6878 /* INDownloadResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4606B315A4B6CF009C6878 /* INDownloadResult.m */; };
 		2E4847581593D23B00D1EBF4 /* INSubtitleDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E4847571593D23B00D1EBF4 /* INSubtitleDownloader.m */; };
+		2E4E7C8115CAFF3600AB834A /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4E7C8015CAFF3600AB834A /* Sparkle.framework */; };
+		2E4E7C8415CAFF9A00AB834A /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2E4E7C8015CAFF3600AB834A /* Sparkle.framework */; };
+		2E4E7C8615CB008700AB834A /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = 2E4E7C8515CB008700AB834A /* dsa_pub.pem */; };
 		2E577C8414F952E300914F56 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E577C8314F952E300914F56 /* Cocoa.framework */; };
 		2E577C8E14F952E300914F56 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2E577C8C14F952E300914F56 /* InfoPlist.strings */; };
 		2E577C9014F952E300914F56 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E577C8F14F952E300914F56 /* main.m */; };
@@ -41,6 +44,19 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		2E4E7C8315CAFF8300AB834A /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2E4E7C8415CAFF9A00AB834A /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2E20C37715003CA800A826A7 /* AppIcon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = AppIcon.icns; sourceTree = "<group>"; };
 		2E30A1E515024A8100119004 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
@@ -57,6 +73,8 @@
 		2E4606B315A4B6CF009C6878 /* INDownloadResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INDownloadResult.m; sourceTree = "<group>"; };
 		2E4847561593D23B00D1EBF4 /* INSubtitleDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INSubtitleDownloader.h; sourceTree = "<group>"; };
 		2E4847571593D23B00D1EBF4 /* INSubtitleDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INSubtitleDownloader.m; sourceTree = "<group>"; };
+		2E4E7C8015CAFF3600AB834A /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		2E4E7C8515CB008700AB834A /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 		2E577C7F14F952E300914F56 /* iNapi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iNapi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E577C8314F952E300914F56 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2E577C8614F952E300914F56 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -87,6 +105,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2E577C8414F952E300914F56 /* Cocoa.framework in Frameworks */,
+				2E4E7C8115CAFF3600AB834A /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +153,7 @@
 		2E577C8214F952E300914F56 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2E4E7C8015CAFF3600AB834A /* Sparkle.framework */,
 				2E577C8314F952E300914F56 /* Cocoa.framework */,
 				2E577CA114F952E400914F56 /* SenTestingKit.framework */,
 				2E577C8514F952E300914F56 /* Other Frameworks */,
@@ -165,6 +185,7 @@
 		2E577C8A14F952E300914F56 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2E4E7C8515CB008700AB834A /* dsa_pub.pem */,
 				2E577C8B14F952E300914F56 /* iNapi-Info.plist */,
 				2E577C8C14F952E300914F56 /* InfoPlist.strings */,
 				2E577C8F14F952E300914F56 /* main.m */,
@@ -299,6 +320,7 @@
 				2E577C7B14F952E300914F56 /* Sources */,
 				2E577C7C14F952E300914F56 /* Frameworks */,
 				2E577C7D14F952E300914F56 /* Resources */,
+				2E4E7C8315CAFF8300AB834A /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -369,6 +391,7 @@
 				2E4606AE15A4B631009C6878 /* DownloadStatusFailed.png in Resources */,
 				2E4606AF15A4B631009C6878 /* DownloadStatusNotFound.png in Resources */,
 				2E4606B015A4B631009C6878 /* DownloadStatusSucceeded.png in Resources */,
+				2E4E7C8615CB008700AB834A /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +533,10 @@
 		2E577CB214F952E400914F56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iNapi/iNapi-Prefix.pch";
 				INFOPLIST_FILE = "iNapi/iNapi-Info.plist";
@@ -521,6 +548,10 @@
 		2E577CB314F952E400914F56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "iNapi/iNapi-Prefix.pch";
 				INFOPLIST_FILE = "iNapi/iNapi-Info.plist";
