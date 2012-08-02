@@ -1,0 +1,23 @@
+/* 
+  Localizable.strings
+  iNapi
+
+  Created by Wojtek Nagrodzki on 03/03/2012.
+  Copyright (c) 2012 Trifork. All rights reserved.
+*/
+
+/* INPPreferencesWindowController */
+
+"Subtitle language" = "Subtitle language";
+"Subtitles" = "Subtitles";
+"Convert to UTF8" = "Convert to UTF8";
+"Archive previous" = "Archive previous";
+"Create SRT copy" = "Create SRT copy";
+"During download" = "During download";
+"Show main window" = "Show main window";
+"Use Growl" = "Use Growl";
+"After download" = "After download";
+"Quit iNapi" = "Quit iNapi";
+
+"Polish" = "Polish";
+"English" = "English";
