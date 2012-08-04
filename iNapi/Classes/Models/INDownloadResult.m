@@ -19,28 +19,23 @@
 
 @implementation INDownloadResult
 
-@synthesize movieFileName;
-@synthesize downloadResultImage;
-// Private
-@synthesize downloadedSubtitlesURL;
-
 - (id)initWithDownloadedSubtitlesURL:(NSURL *)aDownloadedSubtitlesURL error:(NSError *)error
 {
     self = [super init];
     if (self) {
-        self.downloadedSubtitlesURL = aDownloadedSubtitlesURL;
+        _downloadedSubtitlesURL = aDownloadedSubtitlesURL;
         
         if (error == nil) {
-            self.downloadResultImage = [NSImage imageNamed:@"DownloadStatusSucceeded"];
+            _downloadResultImage = [NSImage imageNamed:@"DownloadStatusSucceeded"];
             return self;
         }
         
         if ([error.domain isEqualToString:@"com.izydor86.iNapi"] && error.code == 404) {
-            self.downloadResultImage = [NSImage imageNamed:@"DownloadStatusNotFound"];
+            _downloadResultImage = [NSImage imageNamed:@"DownloadStatusNotFound"];
             return self;
         }
         
-        self.downloadResultImage = [NSImage imageNamed:@"DownloadStatusFailed"];
+        _downloadResultImage = [NSImage imageNamed:@"DownloadStatusFailed"];
     }
     return self;
 }

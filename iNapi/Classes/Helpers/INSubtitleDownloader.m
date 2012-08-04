@@ -19,11 +19,6 @@
 
 @implementation INSubtitleDownloader
 
-@synthesize delegate;
-// Private
-@synthesize downloadQueue;
-@synthesize fileManager;
-
 + (INSubtitleDownloader *)sharedDownloader
 {
     __strong static id _sharedObject = nil;
@@ -38,16 +33,16 @@
 {
     self = [super init];
     if (self) {
-        self.downloadQueue = dispatch_queue_create("com.izydor86.inapi.downloadSubtitles", DISPATCH_QUEUE_SERIAL);
-        self.fileManager = [NSFileManager defaultManager];
+        _downloadQueue = dispatch_queue_create("com.izydor86.inapi.downloadSubtitles", DISPATCH_QUEUE_SERIAL);
+        _fileManager = [NSFileManager defaultManager];
     }
     return self;
 }
 
 - (void)dealloc
 {
-    dispatch_release(downloadQueue);
-    self.downloadQueue = NULL;
+    dispatch_release(_downloadQueue);
+    _downloadQueue = NULL;
 }
 
 #pragma mark - Interface

@@ -21,13 +21,11 @@
 
 @implementation INPMovieFilter
 
-@synthesize fileManager;
-
 - (id)init
 {
     self = [super init];
     if (self) {
-        self.fileManager = [NSFileManager defaultManager];
+        _fileManager = [NSFileManager defaultManager];
     }
     return self;
 }
@@ -40,7 +38,7 @@
 	
 	BOOL isDirectory;
 	for (NSString * path in filePaths) {
-		[fileManager fileExistsAtPath:path isDirectory:&isDirectory];
+		[self.fileManager fileExistsAtPath:path isDirectory:&isDirectory];
 		
 		if (isDirectory) {
 			NSArray * moviePathsAtDirectory = [self moviePathsAtDirectory:path];
@@ -80,14 +78,14 @@
 {
 	NSMutableArray * movies = [NSMutableArray array];
 	
-	NSDirectoryEnumerator* enumerator = [fileManager enumeratorAtPath:directoryPath];
+	NSDirectoryEnumerator* enumerator = [self.fileManager enumeratorAtPath:directoryPath];
 	BOOL isDirectory;
 	NSString * iPath = nil;
 	NSString* completeIPath = nil;
 	
 	while (iPath = [enumerator nextObject]) {
 		completeIPath = [[NSString stringWithString:directoryPath] stringByAppendingPathComponent:iPath];
-		[fileManager fileExistsAtPath:completeIPath isDirectory: &isDirectory];
+		[self.fileManager fileExistsAtPath:completeIPath isDirectory: &isDirectory];
 		
 		if (!isDirectory)
 			if ([self fileConformsToMovieUTI:completeIPath])
