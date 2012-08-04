@@ -15,7 +15,6 @@
 + (BOOL)archivePreviousSubtitles;
 + (BOOL)createSRTCopy;
 + (BOOL)showMainWindow;
-+ (BOOL)useGrowl;
 + (BOOL)quitINapi;
 
 @end

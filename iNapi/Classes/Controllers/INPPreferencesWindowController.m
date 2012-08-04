@@ -13,7 +13,6 @@ static NSString * const INPPreferencesWindowControllerConvertToUTF8Key = @"INPPr
 static NSString * const INPPreferencesWindowControllerArchivePreviousSubtitlesKey = @"INPPreferencesWindowControllerArchivePreviousSubtitles";
 static NSString * const INPPreferencesWindowControllerCreateSRTCopyKey = @"INPPreferencesWindowControllerCreateSRTCopy";
 static NSString * const INPPreferencesWindowControllerShowMainWindowKey = @"INPPreferencesWindowControllerShowMainWindow";
-static NSString * const INPPreferencesWindowControllerUseGrowlKey = @"INPPreferencesWindowControllerUseGrowl";
 static NSString * const INPPreferencesWindowControllerQuitINapiKey = @"INPPreferencesWindowControllerQuitINapi";
 static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey = @"INPPreferencesWindowControllerSelectedLanguageIndexKey";
 
@@ -24,7 +23,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
 @property (assign, nonatomic) BOOL archivePreviousSubtitles;
 @property (assign, nonatomic) BOOL createSRTCopy;
 @property (assign, nonatomic) BOOL showMainWindow;
-@property (assign, nonatomic) BOOL useGrowl;
 @property (assign, nonatomic) BOOL quitINapi;
 
 @property (copy, nonatomic) NSArray * languages;
@@ -39,7 +37,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
 @property (weak) IBOutlet NSButton *createSRTCopyButton;
 @property (weak) IBOutlet NSTextField *duringDownloadLabel;
 @property (weak) IBOutlet NSButton *showMainWindowButton;
-@property (weak) IBOutlet NSButton *useGrowlButton;
 @property (weak) IBOutlet NSTextField *afterDownloadLabel;
 @property (weak) IBOutlet NSButton *quitINapiButton;
 
@@ -47,27 +44,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
 
 
 @implementation INPPreferencesWindowController
-
-@synthesize subtitleLanguageLabel;
-@synthesize subtitlesLabel;
-@synthesize convertToUTF8Button;
-@synthesize archivePreviousButton;
-@synthesize createSRTCopyButton;
-@synthesize duringDownloadLabel;
-@synthesize showMainWindowButton;
-@synthesize useGrowlButton;
-@synthesize afterDownloadLabel;
-@synthesize quitINapiButton;
-
-// Private
-@synthesize convertToUTF8;
-@synthesize archivePreviousSubtitles;
-@synthesize createSRTCopy;
-@synthesize showMainWindow;
-@synthesize useGrowl;
-@synthesize quitINapi;
-@synthesize languages;
-@synthesize selectedLanguageIndex;
 
 #pragma mark - Class methods
 
@@ -97,11 +73,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
 + (BOOL)showMainWindow
 {
     return [[NSUserDefaults standardUserDefaults] boolForKey:INPPreferencesWindowControllerShowMainWindowKey];
-}
-
-+ (BOOL)useGrowl
-{
-    return [[NSUserDefaults standardUserDefaults] boolForKey:INPPreferencesWindowControllerUseGrowlKey];
 }
 
 + (BOOL)quitINapi
@@ -171,16 +142,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
     return [[self class] showMainWindow];
 }
 
-- (void)setUseGrowl:(BOOL)flag
-{
-    [[NSUserDefaults standardUserDefaults] setBool:flag forKey:INPPreferencesWindowControllerUseGrowlKey];
-}
-
-- (BOOL)useGrowl
-{
-    return [[self class] useGrowl];
-}
-
 - (void)setQuitINapi:(BOOL)flag
 {
     [[NSUserDefaults standardUserDefaults] setBool:flag forKey:INPPreferencesWindowControllerQuitINapiKey];
@@ -212,7 +173,6 @@ static NSString * const INPPreferencesWindowControllerSelectedLanguageIndexKey =
     self.createSRTCopyButton.title         = NSLocalizedString(@"Create SRT copy", nil);
     self.duringDownloadLabel.stringValue   = NSLocalizedString(@"During download", nil);
     self.showMainWindowButton.title        = NSLocalizedString(@"Show main window", nil);
-    self.useGrowlButton.title              = NSLocalizedString(@"Use Growl", nil);
     self.afterDownloadLabel.stringValue    = NSLocalizedString(@"After download", nil);
     self.quitINapiButton.title             = NSLocalizedString(@"Quit iNapi", nil);
 }
