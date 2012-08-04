@@ -111,7 +111,6 @@
         [self.window makeKeyAndOrderFront:self];
     }
     
-    self.movieFilter = [[INPMovieFilter alloc] init];
     NSArray * array = [self.movieFilter moviePathsAmongFilePaths:filenames];
     
     for (NSString * path in array) {
