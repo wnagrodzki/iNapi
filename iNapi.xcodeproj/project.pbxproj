@@ -32,6 +32,7 @@
 		2E577CDC14F95F6100914F56 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E577CD214F95F6100914F56 /* MainMenu.xib */; };
 		2E577CE414F9620800914F56 /* INPPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E577CE314F9620800914F56 /* INPPreferencesWindowController.m */; };
 		2E577CE614F9631000914F56 /* INPPreferencesWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E577CE514F9631000914F56 /* INPPreferencesWindow.xib */; };
+		2E9CB113160E13C1004D7AAD /* INErrors.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E9CB112160E13C1004D7AAD /* INErrors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +98,8 @@
 		2E577CE214F9620800914F56 /* INPPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INPPreferencesWindowController.h; sourceTree = "<group>"; };
 		2E577CE314F9620800914F56 /* INPPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INPPreferencesWindowController.m; sourceTree = "<group>"; };
 		2E577CE514F9631000914F56 /* INPPreferencesWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = INPPreferencesWindow.xib; sourceTree = "<group>"; };
+		2E9CB111160E13C1004D7AAD /* INErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INErrors.h; sourceTree = "<group>"; };
+		2E9CB112160E13C1004D7AAD /* INErrors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INErrors.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -264,6 +267,8 @@
 				2E30A1F31502872E00119004 /* INPMovieFilter.m */,
 				2E4847561593D23B00D1EBF4 /* INSubtitleDownloader.h */,
 				2E4847571593D23B00D1EBF4 /* INSubtitleDownloader.m */,
+				2E9CB111160E13C1004D7AAD /* INErrors.h */,
+				2E9CB112160E13C1004D7AAD /* INErrors.m */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -434,6 +439,7 @@
 				2E30A1F41502872E00119004 /* INPMovieFilter.m in Sources */,
 				2E4847581593D23B00D1EBF4 /* INSubtitleDownloader.m in Sources */,
 				2E4606B415A4B6CF009C6878 /* INDownloadResult.m in Sources */,
+				2E9CB113160E13C1004D7AAD /* INErrors.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

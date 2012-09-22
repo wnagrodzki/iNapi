@@ -7,6 +7,7 @@
 //
 
 #import "INSubtitleDownloader.h"
+#import "INErrors.h"
 
 
 @interface INSubtitleDownloader ()
@@ -66,7 +67,7 @@
         
         // check if subtitles were found, if not pass error 
         if ([subtitles isEqualToString:@"NPc0"]) {
-            error = [NSError errorWithDomain:@"com.izydor86.iNapi" code:404 userInfo:nil];
+            error = [NSError errorWithDomain:iNapiErrorDomain code:iNapiSubtitlesNotFound userInfo:nil];
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
             });

@@ -7,6 +7,7 @@
 //
 
 #import "INDownloadResult.h"
+#import "INErrors.h"
 
 
 @interface INDownloadResult ()
@@ -30,7 +31,7 @@
             return self;
         }
         
-        if ([error.domain isEqualToString:@"com.izydor86.iNapi"] && error.code == 404) {
+        if ([error.domain isEqualToString:iNapiErrorDomain] && error.code == iNapiSubtitlesNotFound) {
             _downloadResultImage = [NSImage imageNamed:@"DownloadStatusNotFound"];
             return self;
         }
