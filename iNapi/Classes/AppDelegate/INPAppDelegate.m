@@ -111,6 +111,8 @@
         [self.window makeKeyAndOrderFront:self];
     }
     
+    self.subtitleDownloader.convertToUTF8 = [INPPreferencesWindowController convertToUTF8];
+    
     NSArray * array = [self.movieFilter moviePathsAmongFilePaths:filenames];
     
     for (NSString * path in array) {

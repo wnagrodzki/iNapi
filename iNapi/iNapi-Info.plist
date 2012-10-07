@@ -36,7 +36,7 @@
 	<key>CFBundleIconFile</key>
 	<string>AppIcon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.izydor86.iNapi.${PRODUCT_NAME:rfc1034identifier}</string>
+	<string>com.izydor86.${PRODUCT_NAME:rfc1034identifier}</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -59,6 +59,10 @@
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>SUFeedURL</key>
+	<string>https://sites.google.com/site/izydor86/inapi/iNapiAppcast.xml</string>
+	<key>SUPublicDSAKeyFile</key>
+	<string>dsa_pub.pem</string>
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
@@ -144,9 +148,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>SUPublicDSAKeyFile</key>
-	<string>dsa_pub.pem</string>
-	<key>SUFeedURL</key>
-	<string>https://sites.google.com/site/izydor86/inapi/iNapiAppcast.xml</string>
 </dict>
 </plist>

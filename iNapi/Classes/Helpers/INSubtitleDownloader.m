@@ -90,7 +90,8 @@
         }
         
         // save subtitles
-        if ([subtitles writeToURL:subtitlesSaveURL atomically:YES encoding:NSWindowsCP1250StringEncoding error:&error] == NO) {
+        NSStringEncoding encoding = self.convertToUTF8 == YES ? NSUTF8StringEncoding : NSWindowsCP1250StringEncoding;
+        if ([subtitles writeToURL:subtitlesSaveURL atomically:YES encoding:encoding error:&error] == NO) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 completionHandler(nil, error);
             });

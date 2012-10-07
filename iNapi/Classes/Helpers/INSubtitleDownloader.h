@@ -19,6 +19,7 @@
 
 @interface INSubtitleDownloader : NSObject
 
+@property (assign, nonatomic) BOOL convertToUTF8;
 @property (weak, nonatomic) id<INSubtitleDownloaderDelegate> delegate;
 
 -(void)downloadSubtitlesAtURL:(NSURL *)subtitlesURL forMovieAtURL:(NSURL *)movieURL completionHandler:(void (^)(NSURL * downloadedSubtitlesURL, NSError * error))completionHandler;
