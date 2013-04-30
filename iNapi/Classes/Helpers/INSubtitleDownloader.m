@@ -54,23 +54,19 @@
         
         // download subtitles
         NSError * error;
-        NSString * subtitles = [NSString stringWithContentsOfURL:subtitlesURL 
-                                                        encoding:NSWindowsCP1250StringEncoding 
+        NSString * subtitles = [NSString stringWithContentsOfURL:subtitlesURL
+                                                        encoding:NSWindowsCP1250StringEncoding
                                                            error:&error];
         
         if (error) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completionHandler(nil, error);
-            });
+            completionHandler(nil, error);
             return;
         }
         
-        // check if subtitles were found, if not pass error 
+        // check if subtitles were found, if not pass error
         if ([subtitles isEqualToString:@"NPc0"]) {
             error = [NSError errorWithDomain:iNapiErrorDomain code:iNapiSubtitlesNotFound userInfo:nil];
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completionHandler(nil, error);
-            });
+            completionHandler(nil, error);
             return;
         }
         
@@ -82,9 +78,7 @@
         if (archivePreviousSubtitles && [self.fileManager fileExistsAtPath:subtitlesSaveURL.path] == YES) {
             NSURL * archiverSubtitlesSaveURL = [self archivedURLWithURL:subtitlesSaveURL];
             if ([self.fileManager moveItemAtURL:subtitlesSaveURL toURL:archiverSubtitlesSaveURL error:&error] == NO) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    completionHandler(nil, error);
-                });
+                completionHandler(nil, error);
                 return;
             }
         }
@@ -92,15 +86,11 @@
         // save subtitles
         NSStringEncoding encoding = self.convertToUTF8 == YES ? NSUTF8StringEncoding : NSWindowsCP1250StringEncoding;
         if ([subtitles writeToURL:subtitlesSaveURL atomically:YES encoding:encoding error:&error] == NO) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                completionHandler(nil, error);
-            });
+            completionHandler(nil, error);
             return;
         }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            completionHandler(subtitlesSaveURL, nil);
-        });
+        completionHandler(subtitlesSaveURL, nil);
     });
 }
 

@@ -120,8 +120,10 @@
         NSURL * subtitlesURL = [self.urlCreator iNapiURLForMovie:path language:[INPPreferencesWindowController subtitleLanguage]];
         [self.subtitleDownloader downloadSubtitlesAtURL:subtitlesURL forMovieAtURL:movieURL completionHandler:^(NSURL *downloadedSubtitlesURL, NSError *error) {
             INDownloadResult * result = [[INDownloadResult alloc] initWithDownloadedSubtitlesURL:downloadedSubtitlesURL error:error];
-            [self.downloadResultsArrayController addObject:result];
-            self.downloadProgress += 1.0 / array.count;
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.downloadResultsArrayController insertObject:result atArrangedObjectIndex:0];
+                self.downloadProgress += 1.0 / array.count;
+            });
         }];
     }
     
