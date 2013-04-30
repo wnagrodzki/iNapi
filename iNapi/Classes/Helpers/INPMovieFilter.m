@@ -57,8 +57,7 @@
 
 - (BOOL)fileConformsToMovieUTI:(NSString *)filePath
 {
-	NSString* targetFilePath_converted = [filePath stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding];
-	CFURLRef anUrl = (__bridge CFURLRef)[NSURL URLWithString: targetFilePath_converted];
+	CFURLRef anUrl = (__bridge CFURLRef)[NSURL fileURLWithPath:filePath isDirectory:NO];
 	FSRef ref;
 	CFURLGetFSRef(anUrl,&ref);
 	CFTypeRef outValue;
@@ -87,9 +86,11 @@
 		completeIPath = [[NSString stringWithString:directoryPath] stringByAppendingPathComponent:iPath];
 		[self.fileManager fileExistsAtPath:completeIPath isDirectory: &isDirectory];
 		
-		if (!isDirectory)
-			if ([self fileConformsToMovieUTI:completeIPath])
-				[movies addObject:completeIPath];
+        if (isDirectory == YES)
+            continue;
+        
+        if ([self fileConformsToMovieUTI:completeIPath] == YES)
+            [movies addObject:completeIPath];
 	}
 	
 	return movies;
