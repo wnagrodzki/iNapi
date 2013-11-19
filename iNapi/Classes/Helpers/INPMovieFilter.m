@@ -68,6 +68,9 @@
 						 &outValue
 						 );
 	
+    if (outValue == NULL)
+        return NO;
+    
 	CFStringRef uti = (__bridge CFStringRef)[NSString stringWithString:(__bridge NSString *)outValue];
 	
 	return UTTypeConformsTo(uti, kUTTypeMovie);
